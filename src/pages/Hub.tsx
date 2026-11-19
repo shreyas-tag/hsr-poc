@@ -57,6 +57,10 @@ export default function Hub() {
       </section>
 
       <section className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-14">
+        <div className="mb-5 rounded-xl border border-flame/30 bg-flame/10 px-4 py-3 text-sm text-white/80 flex gap-2.5">
+          <MessageSquare size={17} className="text-flame shrink-0 mt-0.5" />
+          <span><b className="text-white">This is a working mock-up, not the final product.</b> It shows the full scope of each part. Layouts, colours, wording, form fields, job stages, price list, SMS messages and reports are all set up to suit how you work.</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {UNITS.map((u, k) => (
             <article key={u.n} className="group relative rounded-2xl border border-white/10 bg-steel-900 overflow-hidden anim-up" style={{ animationDelay: `${k * 70}ms` }}>
@@ -119,7 +123,7 @@ export default function Hub() {
         {[
           { icon: BookOpen, t: "Sample content", d: "Customers, jobs and numbers are made up to show how it works. Your real details replace them at build." },
           { icon: Palette, t: "Placeholder name and images", d: "\"HSR.\" in plain text stands in until you choose a logo. Photos are AI-generated concept images; we'll use your workshop photos." },
-          { icon: MessageSquare, t: "Built around you", d: "Stages, price list, SMS wording and reports are set up to match how you work, agreed in a short planning call." },
+          { icon: MessageSquare, t: "Everything is customisable", d: "Pages, wording, fields, stages, price list, SMS messages and reports are changed to match how you work, agreed in a short planning call." },
         ].map((x) => (
           <div key={x.t} className="rounded-xl border border-white/10 p-5">
             <x.icon size={18} className="text-flame" />
