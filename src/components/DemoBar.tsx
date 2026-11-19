@@ -14,8 +14,8 @@ export function DemoBar() {
   return (
     <div className="bg-steel-950 text-white/70 text-[11.5px] relative z-[45]">
       <div className="max-w-[1440px] mx-auto px-3 sm:px-4 h-9 flex items-center gap-3">
-        <span className="hidden lg:inline text-white/45 whitespace-nowrap">Concept mock-up for HSR Powder Coating · by Axera Digital · sample data · everything can be customised</span>
-        <nav className="flex items-center gap-0.5 overflow-x-auto scroll-thin lg:ml-auto -mx-1 px-1">
+        <span className="hidden xl:inline text-white/45 whitespace-nowrap truncate">Concept mock-up for HSR Powder Coating · by Axera Digital · sample data · everything can be customised</span>
+        <nav className="flex items-center gap-0.5 overflow-x-auto scroll-thin ml-auto -mx-1 px-1">
           {LINKS.map((l) => (
             <NavLink
               key={l.to}
