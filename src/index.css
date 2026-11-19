@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html, body, #root { height: 100%; }
+body {
+  @apply bg-canvas text-ink font-sans antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+.display { font-family: "Archivo Variable", "Inter Variable", system-ui, sans-serif; font-stretch: 118%; letter-spacing: -0.01em; }
+.display-wide { font-family: "Archivo Variable", "Inter Variable", system-ui, sans-serif; font-stretch: 125%; letter-spacing: 0.01em; }
+.eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.18em]; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #D3D7DE; border-radius: 8px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+.tbl { @apply w-full text-sm; border-collapse: separate; border-spacing: 0; }
+.tbl th { @apply text-left text-2xs font-medium uppercase tracking-wider text-ink-4 px-4 py-2.5 border-b border-line bg-steel-50 whitespace-nowrap; }
+.tbl td { @apply px-4 py-3 border-b border-line-2 align-middle; }
+.tbl tbody tr:hover td { @apply bg-steel-50; }
+
+.input { @apply w-full h-10 px-3 rounded-md border border-line-3 bg-white text-sm outline-none transition-colors placeholder:text-ink-5; }
+.input:focus { @apply border-flame ring-2 ring-flame/15; }
+textarea.input { @apply h-auto py-2.5; }
+select.input { @apply pr-8; }
+
+.input-dark { @apply w-full h-11 px-3.5 rounded-md border border-white/15 bg-white/[0.06] text-sm text-white outline-none placeholder:text-white/35 transition-colors; }
+.input-dark:focus { @apply border-flame bg-white/[0.09]; }
+select.input-dark option { color: #0F1115; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes pulseRing { 0% { box-shadow: 0 0 0 0 rgba(255,90,31,.55); } 100% { box-shadow: 0 0 0 14px rgba(255,90,31,0); } }
+@keyframes drift { from { transform: scale(1.02); } to { transform: scale(1.09); } }
+.anim-up { animation: fadeUp .45s cubic-bezier(.2,.7,.2,1) both; }
+.anim-fade { animation: fadeIn .25s ease both; }
+.anim-slide { animation: slideIn .28s cubic-bezier(.2,.7,.2,1) both; }
+.kenburns { animation: drift 14s ease-out forwards; }
+.pulse-ring { animation: pulseRing 1.6s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .anim-up, .anim-fade, .anim-slide, .kenburns, .pulse-ring { animation: none !important; }
+}
+
+.grain { background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 3px 3px; }
+.hatch { background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 1px, transparent 1px 12px); }
